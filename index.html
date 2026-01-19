@@ -1,164 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Denise Marie Gonzales | Portfolio</title>
+
+<!-- META TAGS -->
+<meta name="description" content="Personal portfolio of Denise Marie Gonzales featuring artworks, blogs, projects, and creative work.">
+<meta name="keywords" content="Denise Gonzales, portfolio, student portfolio, art, blogs, creative projects">
+<meta name="author" content="Denise Marie Gonzales">
+
+<meta property="og:title" content="Denise Marie Gonzales | Portfolio">
+<meta property="og:description" content="A personal portfolio showcasing art, writing, and creative projects.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://picsum.photos/id/1015/1600/900">
+
 <style>
-* {
-box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-body {
-font-family: Arial;
-padding: 10px;
-background: #f1f1f1;
-}
+* { box-sizing:border-box; scroll-behavior:smooth; margin:0; padding:0; }
 
-/* Header/Blog Title */
+body { font-family:'Poppins', sans-serif; background:#1c1c1c; color:#fff; overflow-x:hidden; }
+
 .header {
-padding: 30px;
-text-align: center;
-background: white;
+  height:60vh; 
+  background:url('https://www.awn.com/sites/default/files/styles/original/public/image/attached/1060287-wamenv50101newdelhyorkdesignv020akevin-1280.jpg?itok=o7vgEkAz') center/cover no-repeat;
+  display:flex; justify-content:center; align-items:center; text-align:center; position:relative;
 }
 
-.header h1 {
-font-size: 50px;
+.topnav { background-color: rgba(255,0,0,0.9); position:sticky; top:0; z-index:999; display:flex; justify-content:center; }
+.topnav a { color:#fff; text-decoration:none; padding:15px 25px; font-weight:600; transition:0.3s; position:relative; overflow:hidden; }
+.topnav a:hover, .topnav a.active { color:#1c1c1c; background:#ffd700; border-radius:8px; transform:scale(1.1); }
+.topnav a::after { content:''; position:absolute; width:100%; height:100%; top:0; left:-100%; background:rgba(255,255,255,0.2); transition:0.4s; }
+.topnav a:hover::after { left:0; }
+
+#artworks {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.art-gallery-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.art-gallery {
+  display: flex;
+  height: 100%;
+  flex: 1;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  scroll-snap-type: x mandatory;
+}
+.art-gallery::-webkit-scrollbar { height: 12px; }
+.art-gallery::-webkit-scrollbar-thumb { background: #ffcc00; border-radius: 10px; }
+.art-card {
+  flex: 0 0 100%;
+  height: 100%;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.art-card:hover { transform: scale(1.05) translateY(-5px); box-shadow:0 12px 35px rgba(0,0,0,0.3); }
+
+.arrow-btn {
+  background:#ff0000; color:#fff; border:none; border-radius:50%;
+  width:60px; height:60px; font-size:28px; cursor:pointer;
 }
 
-/* Style the top navigation bar */
-.topnav {
-overflow: hidden;
-background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-float: left;
-display: block;
-color: #f2f2f2;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-background-color: #ddd;
-color: black;
-}
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {
-float: left;
-width: 75%;
-}
-
-/* Right column */
-.rightcolumn {
-float: left;
-width: 25%;
-background-color: #f1f1f1;
-padding-left: 20px;
-}
-
-/* Fake image */
-.fakeimg {
-background-color: #aaa;
-width: 100%;
-padding: 20px;
-}
-
-/* Add a card effect for articles */
-.card {
-background-color: white;
-padding: 20px;
-margin-top: 20px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-content: "";
-display: table;
-clear: both;
-}
-
-/* Footer */
 .footer {
-padding: 20px;
-text-align: center;
-background: #ddd;
-margin-top: 20px;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-.leftcolumn, .rightcolumn {
-width: 100%;
-padding: 0;
-}
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-.topnav a {
-float: none;
-width: 100%;
-}
+  text-align:center;
+  padding:30px;
+  background:#1e1e1e;
+  color:#ffd700;
+  border-top:2px solid #ff0000;
 }
 </style>
 </head>
+
 <body>
 
-<div class="header">
-<h1>My Website</h1>
-<p>Resize the browser window to see the effect.</p>
-</div>
+<!-- Banner -->
+<div class="header"></div>
 
+<!-- Navbar -->
 <div class="topnav">
-<a href="#">Link</a>
-<a href="#">Link</a>
-<a href="#">Link</a>
-<a href="#" style="float:right">Link</a>
+  <a href="#artworks">Artworks</a>
+  <a href="#blogs">Blogs</a>
+  <a href="#about">About</a>
 </div>
 
-<div class="row">
-<div class="leftcolumn">
-<div class="card">
-<h2>TITLE HEADING</h2>
-<h5>Title description, Dec 7, 2017</h5>
-<div class="fakeimg" style="height:200px;">Image</div>
-<p>Some text..</p>
-<p>Mga gwapo og gwapa ang taga 10-Emerald ingon sir Rogel hahaha.  Mga gwapo og gwapa ang taga 10-Emerald ingon sir Rogel hahaha.  Mga gwapo og gwapa ang taga 10-Emerald ingon sir Rogel hahaha.</p>
-</div>
-<div class="card">
-<h2>TITLE HEADING</h2>
-<h5>Title description, Sep 2, 2017</h5>
-<div class="fakeimg" style="height:200px;">Image</div>
-<p>Some text..</p>
-<p>Mga gwapo og gwapa ang taga 10-Emerald ingon sir Rogel hahaha.  Mga gwapo og gwapa ang taga 10-Emerald ingon sir Rogel hahaha.  Mga gwapo og gwapa ang taga 10-Emerald ingon sir Rogel hahaha.<</p>
-</div>
-</div>
-<div class="rightcolumn">
-<div class="card">
-<h2>About Me</h2>
-<div class="fakeimg" style="height:100px;">Image</div>
-<p>Some text about me.  Mga gwapo og gwapa ang taga 10-Emerald ingon sir Rogel hahaha.  <.</p>
-</div>
-<div class="card">
-<h3>Popular Post</h3>
-<div class="fakeimg"><p>Image</p></div>
-<div class="fakeimg"><p>Image</p></div>
-<div class="fakeimg"><p>Image</p></div>
-</div>
-<div class="card">
-<h3>Follow Me</h3>
-<p>Some text..</p>
-</div>
-</div>
+<!-- Artworks Gallery -->
+<div id="artworks">
+  <div class="art-gallery-wrapper">
+    <button class="arrow-btn" onclick="scrollGallery(-1)">&#8592;</button>
+    <div class="art-gallery" id="gallery">
+      <div class="art-card" style="background-image:url('https://picsum.photos/id/1015/1600/900');"></div>
+      <div class="art-card" style="background-image:url('https://picsum.photos/id/1025/1600/900');"></div>
+      <div class="art-card" style="background-image:url('https://picsum.photos/id/1035/1600/900');"></div>
+      <div class="art-card" style="background-image:url('https://picsum.photos/id/1045/1600/900');"></div>
+      <div class="art-card" style="background-image:url('https://picsum.photos/id/1055/1600/900');"></div>
+    </div>
+    <button class="arrow-btn" onclick="scrollGallery(1)">&#8594;</button>
+  </div>
 </div>
 
+<!-- Footer -->
 <div class="footer">
-<h2>Footer</h2>
+  <p>© 2025 Denise’s Portfolio. Crafted with comic vibrance.</p>
 </div>
+
+<script>
+const gallery = document.getElementById('gallery');
+function scrollGallery(dir){
+  gallery.scrollBy({ left: dir * gallery.clientWidth, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
